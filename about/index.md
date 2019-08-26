@@ -1,10 +1,10 @@
 ---
 layout: layouts/post.njk
-title: About Me
+title: About FamJam
 tags:
   - nav
 navtitle: About
 templateClass: tmpl-post
 ---
 
-I am a person that writes stuff.
+FamJam is a list of independent, family-friendly eateries, by city.
