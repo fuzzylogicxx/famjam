@@ -1,0 +1,10 @@
+---
+permalink: /cities/
+layout: layouts/home.njk
+---
+<h1>Cities</h1>
+
+{% for city in collections.cityList %}
+  {% set cityUrl %}/cities/{{ city }}/{% endset %}
+  <a href="{{ cityUrl | url }}" class="city">{{ city }}</a>
+{% endfor %}

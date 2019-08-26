@@ -30,6 +30,25 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
 
+  // Create a collection of cities (i.e. all cities venues are located in) so they can be displayed on a “Cities” index page
+  eleventyConfig.addCollection("cityList", require("./_11ty/getCityList"));
+
+  // Create a collection "venues for city" keyed by city name
+  eleventyConfig.addCollection("cityCollections", function(collection) {
+    let resultArrays = {};
+    collection.getAll().forEach(function(item) {
+      if(item.data["title"] && item.data["city"]) {
+        if( !resultArrays[item.data["city"]] ) {
+          resultArrays[item.data["city"]] = [];
+        }
+        resultArrays[item.data["city"]].push(item);
+      }
+    });
+    return resultArrays;
+  });
+
+
+
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
 
