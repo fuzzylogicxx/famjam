@@ -1,16 +1,16 @@
 {
-  "title": "Your Blog Name",
+  "title": "FamJam",
   "url": "https://myurl.com/",
-  "description": "I am writing about my experiences as a naval navel-gazer.",
+  "description": "Family-friendly eateries.",
   "feed": {
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "subtitle": "Family-friendly eateries.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "url": "https://myurl.com/feed/feed.xml",
     "id": "https://myurl.com/"
   },
   "author": {
-    "name": "Your Name Here",
-    "email": "youremailaddress@example.com"
+    "name": "Laurence Hughes",
+    "email": "laurence@fuzzylogic.me"
   }
 }
