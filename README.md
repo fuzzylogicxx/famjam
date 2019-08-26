@@ -1,6 +1,6 @@
 # famjam
 
-Family-friendly eateries.
+Family-friendly eateries, built on the JAMstack.
 
 https://famjam.info/
 
