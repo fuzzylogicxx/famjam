@@ -5,9 +5,31 @@ tags:
 navtitle: Home
 ---
 
-<h1>Latest Additions</h1>
+<h1>A directory of fine family-friendly eateries.</h1>
+
+<header>
+  <h2>Select City</h2>
+  <p>See <a href="{{ '/cities/' | url }}">all cities</a>.</p>
+</header>
+
+<ul>
+{% for city in collections.cityList %}
+  {% set cityUrl %}/cities/{{ city }}/{% endset %}
+  <li><a href="{{ cityUrl | url }}" class="city">{{ city }}</a></li>
+{% endfor %}
+</ul>
+
+<h2>Latest Additions</h2>
 
 {% set postslist = collections.posts | head(-3) %}
 {% include "postslist.njk" %}
 
-<p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+<p>See <a href="{{ '/posts/' | url }}">all restaurants in all cities</a>.</p>
+
+<h2>Browse by tag</h2>
+
+{% for tag in collections.tagList %}
+  {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+  <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+{% endfor %}
+
