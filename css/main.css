@@ -36,6 +36,7 @@
 
 * {
   max-width: var(--measure);
+  box-sizing: border-box;
 }
 
 html,
@@ -59,7 +60,18 @@ html {
   font-family: sans-serif;
 }
 
-/* Layout Template: Stack */
+/**/
+
+ul[class] {
+  padding-left: 0;
+  list-style: none;
+}
+
+/**/
+
+img { width: 100%; }
+
+/* Layout utility: Stack */
 
 .stack {
   --space: 1.5rem;
@@ -74,7 +86,7 @@ html {
   margin-top: var(--space);
 }
 
-/* Layout Template: Box */
+/* Layout utility: Box */
 
 .box {
   --color-light: #fff;
@@ -104,6 +116,225 @@ html {
   outline-offset: calc(var(--border-thin) * -1);
 }
 
-/* Layout Template:  */
+/* Layout utility: Centre */
+
+.centre {
+  --maxwidth: var(--measure);
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--maxwidth);
+}
+
+.centre.with-padding {
+  padding-left: var(--s1);
+  padding-right: var(--s1);
+}
+
+.centre.centred-text {
+  text-align: center;
+}
+
+.centre.centre-children-intrinsically {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Layout utility: Cluster; */
+
+.cluster {
+  --space: 1rem;
+  overflow: hidden;
+}
+
+.cluster > * {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* change for different horizontal alignment */
+  align-items: center; /* change for different vertical alignment */
+  margin: calc(var(--space) / 2 * -1);
+}
+
+.cluster > * > * {
+  margin: calc(var(--space) / 2);
+}
+
+
+/* Header */
+
+.global-header {
+  padding: var(--s1);
+}
+
+/* Footer */
+
+.global-footer {
+  padding: var(--s1);
+}
+
+/* Layout utility: sidebar */
+
+.with-sidebar {
+  overflow: hidden;
+  --sidebarspace: var(--s1);
+}
+
+.with-sidebar > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--sidebarspace) / 2 * -1);
+}
+
+.sidebar-media-object.with-sidebar-left > * {
+  align-items: flex-start; /* because we don’t want the image’s height to stretch and distort */
+}
+
+.with-sidebar > * > * {
+  margin: calc(var(--sidebarspace) / 2);
+  flex-grow: 1;
+}
+
+.sidebar-media-object > * > * {
+  flex-basis: 15rem;
+}
+
+.sidebar-media-object.with-sidebar-right > * > * {
+  flex-basis: 20ch;
+}
+
+.with-sidebar-left > * > :last-child,
+.with-sidebar-right > * > :first-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - var(--sidebarspace));
+}
+
+.no-space {
+  --sidebarspace: 0px;
+}
+
+.sidebar-media-object {
+  --sidebarspace: var(--s2);
+}
+
+/*
+  Layout utility: Switcher
+  (for when the component must either be "equal width items stacked horizontally in a single row" or "equal width items stacked vertically in a single row")"
+*/
+
+.switcher {
+  --threshold: var(--measure);
+  --space: var(--s1); /* if want no space, use 0px so as not to break calc() */
+}
+
+.switcher > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc((var(--space) / 2) * -1);
+}
+
+.switcher > * > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--measure) - (100% - var(--space))) * 999);
+  margin: calc(var(--space) / 2);
+}
+
+/* Optional Extra: We might say that any more than 4 items laid out horizontally would be too squashed up; so if there are 5 or more items, switch to "vertical mode" */
+.switcher > * > :nth-last-child(n+5),
+.switcher > * > :nth-last-child(n+5) ~ * {
+  flex-basis: 100%;
+}
+
+
+/*
+  Layout utility: Cover
+  – an element with i) a minimum height; ii) a principal vertically centred element; and iii) optional top and bottom elements.)
+  – useful for a full-height "front cover" intro; or a modal dialogue with a close button at top
+*/
+
+.cover {
+  --minheight: 30vh;
+  --space: var(--s1); /* for none use 0 */
+  --padding: var(--space); /* for none use 0 */
+  display: flex;
+  flex-direction: column;
+  min-height: var(--minheight);
+  padding: var(--padding);
+}
+
+.cover > * {
+  margin-top: var(--space);
+  margin-bottom: var(--space);
+}
+
+.cover > :first-child:not(.cover-principal-element) {
+  margin-top: 0;
+}
+
+.cover > :last-child:not(.cover-principal-element) {
+  margin-bottom: 0;
+}
+
+.cover > .cover-principal-element {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+/* Layout utility: Grid */
+
+.grid {
+  --min-col-width: calc(var(--measure) / 2);
+  --space: var(--s1);
+
+  display: grid;
+  grid-gap: var(--space);
+  grid-template-columns: 100%;
+}
+
+.grid.aboveMin {
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr));
+}
+
+@supports (width: min(20rem, 100%)) { /* the 20rem value isn’t important; it’s just used to test support. */
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--min-col-width), 100%), 1fr));
+  }
+}
+
+
+
+/* container */
+
+.centre.container {
+  --maxwidth: calc(var(--measure) * 2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

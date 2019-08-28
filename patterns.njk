@@ -1,0 +1,210 @@
+---
+layout: layouts/home.njk
+---
+
+<div class="stack">
+
+  <div class="centre with-padding">
+
+    <h1>Patterns</h1>
+
+    <div class="stack">
+
+      <h2>Centre</h2>
+      <p>This paragraph and the heading directly above it are within a .centre</p>
+
+      <h2>Centre with centred text</h2>
+
+      <div class="centre centred-text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+      </div>
+
+      <h2>Intrinsic Centring</h2>
+
+      <div class="centre centre-children-intrinsically">
+        <button>Press me</button>
+      </div>
+
+    </div> <!-- /.stack -->
+
+  </div> <!-- /.centre -->
+
+  <div class="centre container with-padding">
+
+    <h2>Grid</h2>
+
+    <div class="grid" data-min="20ch">
+
+      <div class="box">
+        <div class="stack">
+          <img src="https://source.unsplash.com/WLUHO9A_xik/600x430" alt="Description of image">
+          <h3>This is the title</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="stack">
+          <img src="https://source.unsplash.com/WLUHO9A_xik/600x430" alt="Description of image">
+          <h3>This is the title</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="stack">
+          <img src="https://source.unsplash.com/WLUHO9A_xik/600x430" alt="Description of image">
+          <h3>This is the title</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="stack">
+          <img src="https://source.unsplash.com/WLUHO9A_xik/600x430" alt="Description of image">
+          <h3>This is the title</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+
+    </div> <!-- /.grid -->
+
+  </div> <!-- .centre.container -->
+
+  <div class="centre with-padding">
+
+    <h1>Patterns</h1>
+
+    <div class="stack">
+
+      <h2>Cover</h2>
+
+      <div class="cover" style="background: black; color: #fff;">
+        <div>header</div>
+        <div class="cover-principal-element">centered</div>
+        <div>footer</div>
+      </div>
+
+      <h2>Stack</h2>
+
+      <div class="stack">
+        <div>stack child</div>
+        <div>stack child</div>
+        <div>stack child</div>
+      </div>
+
+      <h2>Box</h2>
+
+      <div class="box">
+        the box's contents
+      </div>
+
+      <h2>Box, inverted</h2>
+
+      <div class="box invert">
+        the box's contents
+      </div>
+
+      <h2>Box, with no padding, containing two boxes</h2>
+
+      <div class="box no-pad">
+        <div class="box invert no-border">head</div>
+        <div class="box no-border">body</div>
+      </div>
+
+      <h2>Cluster</h2>
+
+      <div class="cluster">
+        <ul class="custom">
+          <li>cluster child</li>
+          <li>cluster child</li>
+          <li>cluster child</li>
+          <li>cluster child</li>
+          <li>cluster child</li>
+          <li>cluster child</li>
+          <li>cluster child</li>
+          <li>cluster child</li>
+        </ul>
+      </div>
+
+      <h2>Sidebar, with sidebar on left</h2>
+
+      <div class="with-sidebar with-sidebar-left">
+        <div>
+          <div style="color: red;">sidebar</div>
+          <div style="color: green;">Non-sidebar ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </div>
+      </div>
+
+      <h2>Sidebar, with sidebar on right</h2>
+
+      <div class="with-sidebar with-sidebar-right">
+        <div> <!-- intermediary wrapper -->
+          <div style="color: green;">Non-sidebar ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+          <div style="color: red;">sidebar</div>
+        </div>
+      </div>
+
+      <h2>Sidebar, with no space, used for search form</h2>
+
+      <div class="with-sidebar with-sidebar-right no-space">
+        <form>
+          <input type="text" aria-label="Search" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <h2>Sidebar, for media object with image as fixed-width sidebar</h2>
+
+      <div class="with-sidebar sidebar-media-object with-sidebar-left">
+        <div>
+          <img src="https://source.unsplash.com/WLUHO9A_xik/600x430" alt="Description of image">
+          <p>This is a media object and this is the text accompanying the image lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+
+      <h2>Sidebar, for media object with text as fixed-width sidebar</h2>
+
+      <div class="with-sidebar sidebar-media-object with-sidebar-right">
+        <div>
+          <div><img src="https://source.unsplash.com/WLUHO9A_xik/600x430" alt="Description of image"></div>
+          <p>This is an alternative media object (the text is the fixed-width sidebar while the image can grow) and this is the text accompanying the image</p>
+        </div>
+      </div>
+
+      <h2>Switcher</h2>
+
+      <div class="switcher">
+        <div>
+          <div>Step 1</div>
+          <div>Step 2</div>
+          <div>Step 3</div>
+        </div>
+      </div>
+
+    </div> <!-- /.stack -->
+
+  </div> <!-- /.centre -->
+
+</div> <!-- /.stack -->
+
+
