@@ -168,7 +168,7 @@ layout: layouts/home.njk
         </form>
       </div>
 
-      <h2>Sidebar, for media object with image as fixed-width sidebar</h2>
+      <h2>Sidebar, for media object with <em>image</em> as sidebar</h2>
 
       <div class="with-sidebar sidebar-media-object with-sidebar-left">
         <div>
@@ -182,7 +182,7 @@ layout: layouts/home.njk
         </div>
       </div>
 
-      <h2>Sidebar, for media object with text as fixed-width sidebar</h2>
+      <h2>Sidebar, for media object with <em>text</em> as sidebar</h2>
 
       <div class="with-sidebar sidebar-media-object with-sidebar-right">
         <div>
@@ -201,9 +201,73 @@ layout: layouts/home.njk
         </div>
       </div>
 
+      <h2>Frame, square on portrait orientation, otherwise 16:9 aspect ratio</h2>
+
+      <div class="frame">
+        <img src="https://source.unsplash.com/WLUHO9A_xik/600x430" alt="Description of image">
+      </div>
+
     </div> <!-- /.stack -->
 
   </div> <!-- /.centre -->
+
+  <div class="centre container with-padding">
+
+    <h2>Frames in Cards</h2>
+
+    <div class="grid" data-min="20ch">
+
+      <div class="box no-pad">
+        <div class="frame">
+          <img src="https://source.unsplash.com/WLUHO9A_xik/600x430" alt="Description of image">
+        </div>
+        <div class="box no-border">
+          <div class="stack">
+            <h3>This is the title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box no-pad">
+        <div class="frame">
+          <img src="https://source.unsplash.com/WLUHO9A_xik/600x430" alt="Description of image">
+        </div>
+        <div class="box no-border">
+          <div class="stack">
+            <h3>This is the title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box no-pad">
+        <div class="frame">
+          <p>Image Coming Soon</p>
+        </div>
+        <div class="box no-border">
+          <div class="stack">
+            <h3>This is the title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box no-pad">
+        <div class="frame">
+          <img src="https://source.unsplash.com/WLUHO9A_xik/600x430" alt="Description of image">
+        </div>
+        <div class="box no-border">
+          <div class="stack">
+            <h3>This is the title</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /.grid -->
+
+  </div> <!-- .centre.container -->
 
 </div> <!-- /.stack -->
 
