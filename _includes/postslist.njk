@@ -1,14 +1,25 @@
-<ol reversed class="postlist" style="counter-reset: start-from {{ postslist.length + 1 }}">
+<div class="grid {% if post.url == url %} postlist-item-active{% endif %}" data-min="20ch">
 {% for post in postslist | reverse %}
-  <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-    <a href="{{ post.url | url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-    <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-    {% for tag in post.data.tags %}
-      {%- if tag != "posts" -%}
-      {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-      <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
-      {%- endif -%}
-    {% endfor %}
-  </li>
+<div class="box no-pad">
+  <div class="frame">
+    <img src="https://source.unsplash.com/WLUHO9A_xik/600x430" alt="Description of image">
+  </div>
+  <div class="box no-border">
+    <div class="stack">
+      <h3><a href="{{ post.url | url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h3>
+      <time class="postlist-date block" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+      {% for tag in post.data.tags %}
+        {%- if tag != "posts" -%}
+        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+        <div class="cluster">
+          <ul class="custom">
+            <li><a href="{{ tagUrl | url }}" class="tag">#{{ tag }}</a></li>
+          </ul>
+        </div>
+        {%- endif -%}
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% endfor %}
-</ol>
+</div> <!-- /.grid -->

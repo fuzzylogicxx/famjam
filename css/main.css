@@ -1,3 +1,5 @@
+@viewport{width:device-width}
+
 :root {
 
   /* colours */
@@ -7,7 +9,6 @@
   --white: #fff;
 
   /* borders */
-
   --border-thin: 2px;
 
   /* modular scale for type and spacing */
@@ -26,17 +27,22 @@
 
   /* max-width for readability */
   --measure: 60ch;
+
+  color: var(--darkgray);
+  font-family: sans-serif;
+  line-height: var(--ratio);
+  -webkit-text-size-adjust:100%;
+  box-sizing:border-box;
 }
 
 /*@media (min-width: 960px) {
-  :root {
-    font-size: 125%;
-  }
+  :root { font-size: 125%; }
 }*/
+
+*,:after,:before{box-sizing:inherit}
 
 * {
   max-width: var(--measure);
-  box-sizing: border-box;
 }
 
 html,
@@ -45,34 +51,53 @@ div,
 header,
 nav,
 main,
-footer {
+footer,
+section {
   max-width: none;
 }
 
-html, body {
-  margin: 0; padding: 0;
-}
+html,body,dd,dl,dt,figcaption,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0;padding:0}
 
-html {
-  margin: 0; padding: 0;
-
-  color: var(--darkgray);
-  font-family: sans-serif;
-}
-
-/**/
+ol,ul{margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0}
 
 ul[class] {
   padding-left: 0;
   list-style: none;
 }
 
-/**/
+article,aside,details,figcaption,figure,footer,header,hgroup,img,main,menu,nav,section{display:block}
 
-img {
-  display: block;
-  max-width: 100%;
-}
+img{max-width:100%;border-style:none}
+
+audio,canvas,iframe,img,svg,video{vertical-align:middle}
+
+::selection{background:#f3d2cd;text-shadow:none}
+
+[hidden]{display:none}
+
+.a11y-only{border:0;clip:rect(0 0 0 0);height:auto;margin:0;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap}
+
+.a11y-only.focusable:active,.a11y-only.focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto;white-space:inherit}
+
+.invisible{visibility:hidden}
+
+hr{box-sizing:content-box;height:0;overflow:visible;display:block;height:1px;border:0;border-top:1px solid #ccc}
+
+:focus:not(:focus-visible){outline:none}
+
+pre{font-family:monospace,monospace;font-size:1em}
+
+details{display:block}
+
+summary{display:list-item}
+
+template{display:none}
+
+.clearfix:after,.clearfix:before{content:" ";display:table}.clearfix:after{clear:both}
+
+@media (prefers-reduced-motion:reduce){body{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+
 
 /* Layout utility: Stack */
 
@@ -347,4 +372,14 @@ img {
 
 .centre.container {
   --maxwidth: calc(var(--measure) * 2);
+}
+
+/* Header */
+
+.site-name {
+  font-weight: 700;
+}
+
+.global-header > * {
+  justify-content: space-between;
 }

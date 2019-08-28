@@ -14,34 +14,46 @@
   </head>
   <body>
 
-    <header id="global-header" class="global-header">
-
-      <a class="site-name" href="{{ '/' | url }}">{{ metadata.title }}</a>
-
-      <nav>
-        <ul>
-          {%- for nav in collections.nav | reverse -%}
-            <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></li>
-          {%- endfor -%}
-        </ul>
-      </nav>
-
-      <form class="form-custom" action="https://www.google.co.uk/search" aria-label="Search famjam.info on Google" method="get" class="search">
-        <input type="hidden" name="q" id="q" value="site:https://famjam.info">
-        <div class="form-group field-button-pair field-button-pair-search">
-          <label class="a11y-only" for="srch_v">Search for</label>
-          <input type="search" name="q" id="srch_v" aria-label="Search for..." placeholder="Type search term">
-          <button type="submit" class="btn-search-submit btn-icon" id="srch_btn_v" aria-label="Submit Search">
-            <svg width="1em" height="1em" viewBox="0 0 56.966 56.966">
-              <path fill="currentColor" d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z"></path>
-            </svg>
-          </button>
-        </div>
-      </form>
+    <header id="global-header" class="global-header cluster">
 
       <div>
-        FamJam is open source.
-        <div><a class="contribute-prompt" href="https://github.com/fuzzylogicxx/famjam#contributing"><strong>Add a Café/Restaurant</strong> on GitHub</a></div>
+
+        <a class="site-name" href="{{ '/' | url }}">{{ metadata.title }}</a>
+
+        <div class="cluster">
+
+          <div>
+
+            <nav class="cluster">
+              <ul class="custom">
+                {%- for nav in collections.nav | reverse -%}
+                  <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></li>
+                {%- endfor -%}
+              </ul>
+            </nav>
+
+            <form class="form-custom" action="https://www.google.co.uk/search" aria-label="Search famjam.info on Google" method="get" class="search">
+              <input type="hidden" name="q" id="q" value="site:https://famjam.info">
+              <div class="form-group field-button-pair field-button-pair-search">
+                <label class="a11y-only" for="srch_v">Search for</label>
+                <input type="search" name="q" id="srch_v" aria-label="Search for..." placeholder="Search for something">
+                <button type="submit" class="btn-search-submit btn-icon" id="srch_btn_v" aria-label="Submit Search">
+                  <svg width="1em" height="1em" viewBox="0 0 56.966 56.966">
+                    <path fill="currentColor" d="M55.146 51.887L41.588 37.786A22.926 22.926 0 0 0 46.984 23c0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837a3.004 3.004 0 0 0 .083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z"></path>
+                  </svg>
+                </button>
+              </div>
+            </form>
+
+            <div>
+              <!-- FamJam is open source. -->
+              <div><a class="contribute-prompt" href="https://github.com/fuzzylogicxx/famjam#contributing"><strong>Add a Café/Restaurant</strong> on GitHub</a></div>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
     </header>
@@ -52,18 +64,22 @@
 
     </main>
 
-    <footer id="global-footer" class="global-footer" aria-label="site">
+    <footer id="global-footer" class="global-footer cluster" aria-label="site">
 
       <div>
-        <a href="https://fuzzylogic.me/">Site by Laurence Hughes</a>
-      </div>
 
-      <div>
-        <a href="/feed/feed.xml">RSS Feed</a>
-      </div>
+        <div>
+          2019 <a href="https://fuzzylogic.me/">Laurence Hughes</a>
+        </div>
 
-      <div>
-        <a href="https://github.com/fuzzylogicxx/sofrito">Contribute on Github</a>
+        <div>
+          <a href="/feed/feed.xml">RSS Feed</a>
+        </div>
+
+        <div>
+          <a href="https://github.com/fuzzylogicxx/sofrito">Contribute on Github</a>
+        </div>
+
       </div>
 
     </footer>
