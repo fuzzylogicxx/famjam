@@ -5,26 +5,26 @@ tags:
 navtitle: Home
 ---
 
-<h1>A directory of fine family-friendly eateries.</h1>
+<h1>Family-Friendly Dining Recommendations.</h1>
+<h2>Find interesting local independents which look after the kids and the adults alike.</h2>
 
-<header>
+<section>
   <h2>Select City</h2>
+  <ul>
+  {% for city in collections.cityList %}
+    {% set cityUrl %}/cities/{{ city }}/{% endset %}
+    <li><a href="{{ cityUrl | url }}" class="city">{{ city }}</a></li>
+  {% endfor %}
+  </ul>
   <p>See <a href="{{ '/cities/' | url }}">all cities</a>.</p>
-</header>
-
-<ul>
-{% for city in collections.cityList %}
-  {% set cityUrl %}/cities/{{ city }}/{% endset %}
-  <li><a href="{{ cityUrl | url }}" class="city">{{ city }}</a></li>
-{% endfor %}
-</ul>
+</section>
 
 <h2>Latest Additions</h2>
 
 {% set postslist = collections.posts | head(-3) %}
 {% include "postslist.njk" %}
 
-<p>See <a href="{{ '/posts/' | url }}">all restaurants in all cities</a>.</p>
+<p>See <a href="{{ '/posts/' | url }}">all places in all cities</a>.</p>
 
 <h2>Browse by tag</h2>
 

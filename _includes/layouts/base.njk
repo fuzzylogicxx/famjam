@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- concatenate and minify CSS -->
+    <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/helpers.css' | url }}">
+
     <title>{{ renderData.title or title or metadata.title }}</title>
     <meta name="description" content="{{ renderData.description or description or metadata.description }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
@@ -10,12 +15,16 @@
   <body>
 
     <header>
-      <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
-      <ul class="nav">
-        {%- for nav in collections.nav | reverse -%}
-        <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></li>
-        {%- endfor -%}
-      </ul>
+
+      <a class="site-name" href="{{ '/' | url }}">{{ metadata.title }}</a>
+
+      <nav>
+        <ul>
+          {%- for nav in collections.nav | reverse -%}
+            <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </nav>
 
       <form class="form-custom" action="https://www.google.co.uk/search" aria-label="Search famjam.info on Google" method="get" class="search">
         <input type="hidden" name="q" id="q" value="site:https://famjam.info">
@@ -30,19 +39,34 @@
         </div>
       </form>
 
-      <a class="contribute-prompt" href="https://github.com/fuzzylogicxx/famjam#contributing"><strong>Add a Café/Restaurant</strong> on GitHub</a>
-
-
-
+      <div>
+        FamJam is open source.
+        <div><a class="contribute-prompt" href="https://github.com/fuzzylogicxx/famjam#contributing"><strong>Add a Café/Restaurant</strong> on GitHub</a></div>
+      </div>
 
     </header>
 
     <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
 
       {{ content | safe }}
+
     </main>
 
-    <footer></footer>
+    <footer>
+
+      <div>
+        <a href="https://fuzzylogic.me/">Site by Laurence Hughes</a>
+      </div>
+
+      <div>
+        <a href="/feed/feed.xml">RSS Feed</a>
+      </div>
+
+      <div>
+        <a href="https://github.com/fuzzylogicxx/sofrito">Contribute on Github</a>
+      </div>
+
+    </footer>
 
     <!-- Current page: {{ page.url | url }} -->
   </body>

@@ -1,0 +1,109 @@
+:root {
+
+  /* colours */
+  --lightgray: #e0e0e0;
+  --gray: #C0C0C0;
+  --darkgray: #222;
+  --white: #fff;
+
+  /* borders */
+
+  --border-thin: 2px;
+
+  /* modular scale for type and spacing */
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+
+  /* max-width for readability */
+  --measure: 60ch;
+}
+
+/*@media (min-width: 960px) {
+  :root {
+    font-size: 125%;
+  }
+}*/
+
+* {
+  max-width: var(--measure);
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+  max-width: none;
+}
+
+html, body {
+  margin: 0; padding: 0;
+}
+
+html {
+  margin: 0; padding: 0;
+
+  color: var(--darkgray);
+  font-family: sans-serif;
+}
+
+/* Layout Template: Stack */
+
+.stack {
+  --space: 1.5rem;
+}
+
+.stack > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.stack > * + * {
+  margin-top: var(--space);
+}
+
+/* Layout Template: Box */
+
+.box {
+  --color-light: #fff;
+  --color-dark: #000;
+  background-color: var(--color-light);
+  border: var(--border-thin) solid;
+  color: var(--color-dark);
+  padding: var(--s1);
+}
+
+.box * {
+  color: inherit;
+}
+
+.box.invert {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+.box.no-pad {
+  padding: 0;
+}
+
+.box.no-border {
+  border: 0 solid;
+  outline: var(--border-thin) solid transparent;
+  outline-offset: calc(var(--border-thin) * -1);
+}
+
+/* Layout Template:  */
+
+
