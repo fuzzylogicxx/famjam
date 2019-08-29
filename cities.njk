@@ -9,7 +9,7 @@ layout: layouts/home.njk
 permalink: /cities/{{ city | slug }}/
 ---
 
-<div class="centre container with-padding">
+<div class="content centre container with-padding">
 
   <div class="stack">
 
@@ -18,7 +18,7 @@ permalink: /cities/{{ city | slug }}/
     {% set postslist = collections.cityCollections[ city ] %}
     {% include "postslist.njk" %}
 
-    <p>See <a href="{{ '/cities/' | url }}">all cities</a>.</p>
+    <p>Browse <a href="{{ '/cities/' | url }}">all cities</a>.</p>
 
   </div>
 

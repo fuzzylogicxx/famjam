@@ -5,7 +5,7 @@ tags:
 navtitle: Home
 ---
 
-<div class="stack">
+<div class="hero">
 
   <div class="centre container with-padding">
 
@@ -13,65 +13,65 @@ navtitle: Home
 
       <h1>Family-Friendly Café and Restaurant Recommendations.</h1>
 
-      <p>Find great local, independent places with warm welcomes, good vibes and great menus the whole fam will love.</p>
+      <p>Find local places with good vibes and varied menus the whole fam will love.</p>
 
-      <section class="stack">
+    </div>
 
-        <h2>Choose Location</h2>
+  </div>
 
-        <div class="grid" data-min="20ch">
+</div>
+
+<div class="content centre container with-padding">
+
+  <div class="stack">
+
+    <section class="stack">
+
+      <h2>Where are you?</h2>
+
+      <div class="centre centre-children-intrinsically">
+        <ul class="custom city-list">
 
           {% for city in collections.cityList %}
             {% set cityUrl %}/cities/{{ city }}/{% endset %}
-            <div class="box no-pad">
-              <a href="{{ cityUrl | url }}" class="frame">
-                <img src="/img/placeholder_1.jpg" alt="Description of image">
-              </a>
-              <div class="box no-border">
-                <div class="stack">
-                  <h3><a href="{{ cityUrl | url }}" class="city">{{ city }}</a></h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-              </div>
-            </div>
+            <li><a href="{{ cityUrl | url }}" class="city">{{ city }}</a></li>
           {% endfor %}
 
-        </div> <!-- /.grid -->
+        </ul>
+      </div>
 
-        <p>Browse <a href="{{ '/cities/' | url }}">all locations</a>.</p>
+      <!-- <p>Browse <a href="{{ '/cities/' | url }}">all cities</a>.</p> -->
 
-      </section>
+    </section>
 
-      <section class="stack">
+    <section class="stack">
 
-        <h2>Latest Additions</h2>
+      <h2>Recently Added Places</h2>
 
-        {% set postslist = collections.posts | head(-3) %}
-        {% include "postslist.njk" %}
+      {% set postslist = collections.posts | head(-3) %}
+      {% include "postslist.njk" %}
 
-        <p>See <a href="{{ '/posts/' | url }}">all places in all cities</a>.</p>
+      <p>See <a href="{{ '/posts/' | url }}">all places in all cities</a>.</p>
 
-      </section>
+    </section>
 
-      <section class="stack">
+    <section class="stack">
 
-        <h2>Browse by tag</h2>
+      <h2>Browse by tag</h2>
 
-        <div class="cluster">
-          <ul class="custom">
-          {% for tag in collections.tagList %}
-            {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-            <li><a href="{{ tagUrl | url }}" class="tag">#{{ tag }}</a></li>
-          {% endfor %}
-          </ul>
-        </div>
+      <div class="cluster">
+        <ul class="custom">
+        {% for tag in collections.tagList %}
+          {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+          <li><a href="{{ tagUrl | url }}" class="tag">#{{ tag }}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
 
-      </section>
+    </section>
 
-    </div> <!-- /.stack -->
+  </div> <!-- /.stack -->
 
-  </div> <!-- .centre.container -->
-
-</div> <!-- /.stack -->
+</div> <!-- .centre.container -->
 
 

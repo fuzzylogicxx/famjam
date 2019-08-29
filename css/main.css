@@ -56,7 +56,7 @@ section {
   max-width: none;
 }
 
-html,body,dd,dl,dt,figcaption,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0;padding:0}
+html,body,dd,dl,dt,figcaption,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{ margin:0; padding:0; }
 
 ol,ul{margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0}
 
@@ -98,7 +98,6 @@ template{display:none}
 @media (prefers-reduced-motion:reduce){body{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 
 
-
 /* Layout utility: Stack */
 
 .stack {
@@ -113,6 +112,7 @@ template{display:none}
 .stack > * + * {
   margin-top: var(--space);
 }
+
 
 /* Layout utility: Box */
 
@@ -144,6 +144,7 @@ template{display:none}
   outline-offset: calc(var(--border-thin) * -1);
 }
 
+
 /* Layout utility: Centre */
 
 .centre {
@@ -168,6 +169,7 @@ template{display:none}
   flex-direction: column;
   align-items: center;
 }
+
 
 /* Layout utility: Cluster; */
 
@@ -195,11 +197,13 @@ template{display:none}
   padding: var(--s1);
 }
 
+
 /* Footer */
 
 .global-footer {
   padding: var(--s1);
 }
+
 
 /* Layout utility: sidebar */
 
@@ -323,15 +327,9 @@ template{display:none}
 
 .grid.aboveMin {
   grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr));
-
-  /*
-  a variation which centers the grid (requires auto-fit and a non-1fr max value in minmax())
-  grid-template-columns: repeat(auto-fit, minmax(var(--min-col-width), 35ch));
-  justify-content: center;
-  */
 }
 
-@supports (width: min(20rem, 100%)) { /* the 20rem value isn’t important; it’s just used to test support. */
+@supports (width: min(20rem, 100%)) { /* the 20rem value isn’t important; it’s just used to test support for min(). */
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(min(var(--min-col-width), 100%), 1fr));
   }
@@ -352,8 +350,8 @@ template{display:none}
 
 @media (orientation: portrait) {
   .frame {
-    --numerator: 1;
-    --denomenator: 1;
+    --numerator: 3;
+    --denomenator: 4;
   }
 }
 
@@ -377,13 +375,40 @@ template{display:none}
 }
 
 
-/* container */
+/* Tag Lists */
+
+.box .cluster {
+  margin-top: 1.5rem;
+}
+
+
+/* Addresses */
+
+address {
+  font-style: normal;
+}
+
+/* City List */
+
+
+
+
+/* A centre-based wide container */
 
 .centre.container {
   --maxwidth: calc(var(--measure) * 2);
 }
 
+
 /* Header */
+
+.global-header {
+  background: #000;
+}
+
+.global-header a {
+  color: #fff;
+}
 
 .site-name {
   font-weight: 700;
@@ -398,10 +423,41 @@ template{display:none}
 
 .global-footer > * {
   justify-content: space-between;
+  font-size: var(--s-1);
 }
 
-/* Lists */
 
-.box .cluster {
-  margin-top: 1.5rem;
+/* Type */
+
+h3 {
+  font-size: var(--s0);
+}
+
+h2 {
+  font-size: var(--s1);
+}
+
+h1 {
+  font-size: 20px;
+}
+
+
+/* Primary Content area */
+
+.primary-content {
+  padding-bottom: calc(var(--s1) * 2);
+}
+
+.content {
+  padding-top: var(--s1);
+}
+
+
+/* Home */
+
+.hero {
+  padding-top: var(--s1);
+  padding-bottom: var(--s1);
+  background-color: rebeccapurple;
+  color: #fff;
 }

@@ -6,30 +6,20 @@ tags:
 navtitle: Locations
 ---
 
-<div class="centre container with-padding">
+<div class="content centre container with-padding">
 
   <div class="stack">
 
     <h1>Locations</h1>
 
-    <div class="grid" data-min="20ch">
+    <ul class="custom city-list">
 
       {% for city in collections.cityList %}
         {% set cityUrl %}/cities/{{ city }}/{% endset %}
-        <div class="box no-pad">
-          <a href="{{ cityUrl | url }}" class="frame">
-            <img src="/img/placeholder_1.jpg" alt="Description of image">
-          </a>
-          <div class="box no-border">
-            <div class="stack">
-              <h3><a href="{{ cityUrl | url }}" class="city">{{ city }}</a></h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-          </div>
-        </div>
+        <li><a href="{{ cityUrl | url }}" class="city">{{ city }}</a></li>
       {% endfor %}
 
-    </div> <!-- /.grid -->
+    </ul>
 
   </div>
 
