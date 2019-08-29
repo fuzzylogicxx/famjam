@@ -323,6 +323,12 @@ template{display:none}
 
 .grid.aboveMin {
   grid-template-columns: repeat(auto-fill, minmax(var(--min-col-width), 1fr));
+
+  /*
+  a variation which centers the grid (requires auto-fit and a non-1fr max value in minmax())
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-col-width), 35ch));
+  justify-content: center;
+  */
 }
 
 @supports (width: min(20rem, 100%)) { /* the 20rem value isn’t important; it’s just used to test support. */
@@ -339,6 +345,9 @@ template{display:none}
   --denomenator: 16;
   padding-bottom: calc(var(--numerator) / var(--denomenator) * 100%);
   position: relative;
+
+  /* Allow inline elements (I’m thinking anchors) to act as a frame */
+  display: block;
 }
 
 @media (orientation: portrait) {
@@ -382,4 +391,17 @@ template{display:none}
 
 .global-header > * {
   justify-content: space-between;
+}
+
+
+/* Footer */
+
+.global-footer > * {
+  justify-content: space-between;
+}
+
+/* Lists */
+
+.box .cluster {
+  margin-top: 1.5rem;
 }

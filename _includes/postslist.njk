@@ -1,25 +1,25 @@
 <div class="grid {% if post.url == url %} postlist-item-active{% endif %}" data-min="20ch">
 {% for post in postslist | reverse %}
 <div class="box no-pad">
-  <div class="frame">
-    <img src="https://source.unsplash.com/WLUHO9A_xik/600x430" alt="Description of image">
-  </div>
+  <a class="frame" href="{{ post.url | url }}" class="postlist-link"><img src="/img/placeholder_1.jpg" alt="Description of image"></a>
   <div class="box no-border">
     <div class="stack">
       <h3><a href="{{ post.url | url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h3>
-      <time class="postlist-date block" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-      {% for tag in post.data.tags %}
-        {%- if tag != "posts" -%}
-        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-        <div class="cluster">
-          <ul class="custom">
+      <address><a href="https://maps.google.com/?q={{ post.data.address }}">{{ post.data.address }}</a></address>
+      <div class="cluster">
+        <ul class="custom">
+        {% for tag in post.data.tags %}
+          {%- if tag != "posts" -%}
+            {% set tagUrl %}/tags/{{ tag }}/{% endset %}
             <li><a href="{{ tagUrl | url }}" class="tag">#{{ tag }}</a></li>
-          </ul>
-        </div>
-        {%- endif -%}
-      {% endfor %}
+          {%- endif -%}
+        {% endfor %}
+        </ul>
+      </div>
+      <!-- <p>Posted <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time></p> -->
     </div>
   </div>
 </div>
 {% endfor %}
 </div> <!-- /.grid -->
+

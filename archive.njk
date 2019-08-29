@@ -3,7 +3,15 @@ layout: layouts/home.njk
 permalink: /posts/
 ---
 
-<h1>All locations in all cities</h1>
+<div class="centre container with-padding">
 
-{% set postslist = collections.posts %}
-{% include "postslist.njk" %}
+  <div class="stack">
+
+    <h1>All locations in all cities</h1>
+
+    {% set postslist = collections.posts %}
+    {% include "postslist.njk" %}
+
+  </div>
+
+</div>

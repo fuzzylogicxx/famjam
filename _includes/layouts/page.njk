@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="centre container with-padding">
+
+  <div class="stack">
+
+    <h1>{{ title }}</h1>
+
+    {{ content | safe }}
+
+    <p><a href="{{ '/' | url }}">← Home</a></p>
+
+  </div>
+
+</div>

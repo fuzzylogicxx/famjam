@@ -2,8 +2,32 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<h1>{{ title }}</h1>
 
-{{ content | safe }}
+<div class="centre container with-padding">
 
-<p><a href="{{ '/' | url }}">← Home</a></p>
+  <div class="stack">
+
+    <h1>{{ title }}</h1>
+
+    <address><a href="https://maps.google.com/?q={{ post.data.address }}">{{ address }}</a></address>
+
+    <div><a href="{{ website }}">{{ website }}</a></div>
+
+    {{ content | safe }}
+
+    <div class="cluster">
+      <ul class="custom">
+      {% for tag in tags %}
+        {%- if tag != "posts" -%}
+          {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+          <li><a href="{{ tagUrl | url }}" class="tag">#{{ tag }}</a></li>
+        {%- endif -%}
+      {% endfor %}
+      </ul>
+    </div>
+
+    <!-- <p><a href="{{ '/' | url }}">← Home</a></p> -->
+
+  </div>
+
+</div>

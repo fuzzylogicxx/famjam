@@ -8,9 +8,18 @@ pagination:
 layout: layouts/home.njk
 permalink: /cities/{{ city | slug }}/
 ---
-<h1>{{ city }} Fam-Friendly Eateries</h1>
 
-{% set postslist = collections.cityCollections[ city ] %}
-{% include "postslist.njk" %}
+<div class="centre container with-padding">
 
-<p>See <a href="{{ '/cities/' | url }}">all cities</a>.</p>
+  <div class="stack">
+
+    <h1>{{ city }} Fam-Friendly Eateries</h1>
+
+    {% set postslist = collections.cityCollections[ city ] %}
+    {% include "postslist.njk" %}
+
+    <p>See <a href="{{ '/cities/' | url }}">all cities</a>.</p>
+
+  </div>
+
+</div>

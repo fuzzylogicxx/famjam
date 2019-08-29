@@ -11,22 +11,22 @@ navtitle: Home
 
     <div class="stack">
 
-      <h1>Family-Friendly Dining Recommendations.</h1>
+      <h1>Family-Friendly Café and Restaurant Recommendations.</h1>
 
-      <h2>Find great local independents which look after the kids without dumbing down the menu.</h2>
+      <p>Find great local, independent places with warm welcomes, good vibes and great menus the whole fam will love.</p>
 
       <section class="stack">
 
-        <h2>Select City</h2>
+        <h2>Choose Location</h2>
 
         <div class="grid" data-min="20ch">
 
           {% for city in collections.cityList %}
             {% set cityUrl %}/cities/{{ city }}/{% endset %}
             <div class="box no-pad">
-              <div class="frame">
-                <img src="https://source.unsplash.com/WLUHO9A_xik/600x430" alt="Description of image">
-              </div>
+              <a href="{{ cityUrl | url }}" class="frame">
+                <img src="/img/placeholder_1.jpg" alt="Description of image">
+              </a>
               <div class="box no-border">
                 <div class="stack">
                   <h3><a href="{{ cityUrl | url }}" class="city">{{ city }}</a></h3>
@@ -38,7 +38,7 @@ navtitle: Home
 
         </div> <!-- /.grid -->
 
-        <p>See <a href="{{ '/cities/' | url }}">all cities</a>.</p>
+        <p>Browse <a href="{{ '/cities/' | url }}">all locations</a>.</p>
 
       </section>
 

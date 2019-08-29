@@ -1,8 +1,13 @@
 ---
 title: Dumpling Monkey
-description: This is a post about Dumpling Monkey
+description: Where The East End meets The West End
+city: "Glasgow"
+address: 121 Dumbarton Rd, Glasgow G11 6PR
+website: http://dumplingmonkey.com/
 tags:
   - fast
-city: "Glasgow"
+  - chinese
 ---
-What Dumpling Monkey do.
+Choose from dumplings, potstickers, noodles and wonton soups.
+
+They’re affordable, tasty and fast – essential factors for hungry kids!
