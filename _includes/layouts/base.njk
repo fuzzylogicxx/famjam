@@ -15,34 +15,7 @@
 
   <body{% if templateClass %} class="{{ templateClass }}"{% endif %}>
 
-    <header id="global-header" class="global-header cluster">
-
-      <div>
-
-        <a class="site-name" href="{{ '/' | url }}">{{ metadata.title }}</a>
-
-        <div class="cluster">
-
-          <div>
-
-            <nav class="cluster">
-              <ul class="custom">
-                {%- for nav in collections.nav | reverse -%}
-                  <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></li>
-                {%- endfor -%}
-                <li><a href="/search/">Search</a></li>
-
-
-              </ul>
-            </nav>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </header>
+    {% include "header.njk" %}
 
     <main id="primary-content" class="primary-content">
 
@@ -74,6 +47,10 @@
 
     <!-- Scripts -->
     <script src="{{ '/js/main.js' | url }}"></script>
+
+    {%- block page_specific_scripts -%}
+    stuff
+    {%- endblock -%}
 
     <!-- Current page: {{ page.url | url }} -->
   </body>
