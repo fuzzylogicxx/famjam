@@ -1,9 +1,6 @@
 ---
 layout: layouts/page.njk
 title: About FamJam
-tags:
-  - nav
-navtitle: About
 templateClass: tmpl-post
 ---
 

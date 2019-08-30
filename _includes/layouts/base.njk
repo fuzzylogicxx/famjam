@@ -30,6 +30,9 @@
                 {%- for nav in collections.nav | reverse -%}
                   <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></li>
                 {%- endfor -%}
+                <li><a href="/search/">Search</a></li>
+
+
               </ul>
             </nav>
 
@@ -51,17 +54,18 @@
 
       <div>
 
-        <div>
-          2019 <a href="https://fuzzylogic.me/">Laurence Hughes</a>
-        </div>
-
         <div class="cluster">
 
           <ul class="custom">
+            <li><a href="/about/">About FamJam</a></li>
             <li><a href="/feed/feed.xml">RSS Feed</a></li>
             <li><a href="https://github.com/fuzzylogicxx/sofrito">Contribute on Github</a></li>
           </ul>
 
+        </div>
+
+        <div>
+          2019 <a href="https://fuzzylogic.me/">Laurence Hughes</a>
         </div>
 
       </div>

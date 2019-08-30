@@ -1,8 +1,5 @@
 ---
 layout: layouts/home.njk
-tags:
-  - nav
-navtitle: Home
 ---
 
 <div class="hero">
@@ -29,16 +26,14 @@ navtitle: Home
 
       <h2>Where are you?</h2>
 
-      <div class="centre centre-children-intrinsically">
-        <ul class="custom city-list">
+      <ul class="custom city-list">
 
-          {% for city in collections.cityList %}
-            {% set cityUrl %}/cities/{{ city }}/{% endset %}
-            <li><a href="{{ cityUrl | url }}" class="city">{{ city }}</a></li>
-          {% endfor %}
+        {% for city in collections.cityList %}
+          {% set cityUrl %}/cities/{{ city }}/{% endset %}
+          <li><a href="{{ cityUrl | url }}" class="city">{{ city }}</a></li>
+        {% endfor %}
 
-        </ul>
-      </div>
+      </ul>
 
       <!-- <p>Browse <a href="{{ '/cities/' | url }}">all cities</a>.</p> -->
 
@@ -46,7 +41,7 @@ navtitle: Home
 
     <section class="stack">
 
-      <h2>Recently Added Places</h2>
+      <h2>Recently Added</h2>
 
       {% set postslist = collections.posts | head(-3) %}
       {% include "postslist.njk" %}

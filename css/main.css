@@ -408,6 +408,7 @@ address {
 
 .global-header a {
   color: #fff;
+  text-decoration: none;
 }
 
 .site-name {
@@ -423,7 +424,6 @@ address {
 
 .global-footer > * {
   justify-content: space-between;
-  font-size: var(--s-1);
 }
 
 
